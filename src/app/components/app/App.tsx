@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './app.module.scss';
-import Logo from '../logo/Logo';
+import AppLayout from '../app-layout/AppLayout';
 
 const App: React.FC = () => {
   return (
     <div className={styles['app-layout-container']}>
-      <Logo />
+      <AppLayout></AppLayout>
     </div>
   );
 }
