@@ -1,9 +1,9 @@
 import React from 'react';
-import './app.css';
+import styles from './app.module.scss';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <div className={styles['app-layout-container']}>
     </div>
   );
 }
