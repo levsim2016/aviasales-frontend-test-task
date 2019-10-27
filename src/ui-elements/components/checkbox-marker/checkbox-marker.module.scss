@@ -1,0 +1,30 @@
+@import '../../../styles/theme.scss';
+
+.checkbox-marker-image {
+  width: 1.2rem;
+  height: 0.8rem;
+  fill: $color-primary;
+  opacity: 0;
+  transition: 75ms ease;
+}
+
+.check-marker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.2rem;
+  border: 0.1rem solid #9ABBCE;
+  box-sizing: border-box;
+  margin-right: 1rem;
+
+  &.checked {
+    border: 0.1rem solid $color-primary;
+
+    .checkbox-marker-image{
+      opacity: 1;
+    }
+  }
+}
+

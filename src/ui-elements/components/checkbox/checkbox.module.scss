@@ -1,0 +1,15 @@
+.layout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: #4A4A4A;
+  font-size: 1.3rem;
+  line-height: 2rem;
+
+  &:hover {
+    background-color: #F1FCFF;
+    cursor: pointer;
+  }
+}
