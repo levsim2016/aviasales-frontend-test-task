@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './checkbox-marker.module.scss';
-import CheckboxMarkerProps from 'ui-elements/interfaces/CheckboxMarkerProps';
+import ICheckboxMarkerProps from 'ui-elements/interfaces/ICheckboxMarkerProps';
 
 function getCheckboxMarkerClasses(isChecked: boolean): string {
   if (isChecked === true) {
@@ -9,7 +9,7 @@ function getCheckboxMarkerClasses(isChecked: boolean): string {
   return styles['check-marker'];
 }
 
-const CheckboxMarker: React.FC<CheckboxMarkerProps> = (props: CheckboxMarkerProps) => {
+const CheckboxMarker: React.FC<ICheckboxMarkerProps> = (props: ICheckboxMarkerProps) => {
   const markerClasses = getCheckboxMarkerClasses(props.checked);
   return (
     <div className={markerClasses}>
