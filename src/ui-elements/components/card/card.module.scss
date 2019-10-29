@@ -1,0 +1,9 @@
+@import '../../../styles/theme.scss';
+
+.card {
+  background-color: $surface-color;
+  box-shadow: 0rem 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  font-size: 1.3rem;
+}
