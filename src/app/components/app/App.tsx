@@ -5,9 +5,9 @@ import AppLayout from '../app-layout/AppLayout';
 const App: React.FC = () => {
   return (
     <div className={styles['app-layout-container']}>
-      <AppLayout></AppLayout>
+      {/* <AppLayout></AppLayout> */}
     </div>
   );
-}
+};
 
 export default App;
