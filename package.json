@@ -38,6 +38,7 @@
   "lint-staged": {
     "*.+(js|jsx|ts|tsx)": [
       "eslint --fix",
+      "npm run build",
       "git add"
     ],
     "*.+(json|css|scss|md)": [
