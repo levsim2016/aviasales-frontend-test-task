@@ -8,6 +8,6 @@ const AppLayout: React.FC = () => {
       <Header></Header>
     </div>
   );
-}
+};
 
 export default AppLayout;
