@@ -5,5 +5,8 @@
     "javascriptreact",
     "html",
     "typescriptreact"
-  ]
+  ],
+  "editor.formatOnPaste": false,
+  "eslint.autoFixOnSave": true,
+  "eslint.alwaysShowStatus": true
 }
