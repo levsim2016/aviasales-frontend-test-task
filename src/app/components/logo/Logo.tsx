@@ -6,6 +6,6 @@ const Logo: React.FC = () => {
   return (
     <img className={styles['logo']} src={logoImage} alt="Logo of Aviasales" />
   );
-}
+};
 
 export default Logo;
