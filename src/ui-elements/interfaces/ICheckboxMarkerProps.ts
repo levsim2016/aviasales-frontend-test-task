@@ -1,3 +1,3 @@
-import ISelectable from "./ISelectable";
+import ISelectable from './ISelectable';
 
 export default interface ICheckboxMarkerProps extends ISelectable {}

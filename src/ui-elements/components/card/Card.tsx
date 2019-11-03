@@ -17,6 +17,6 @@ const Card: React.FC<ICardProps> = (props: ICardProps) => {
       {props.children}
     </div>
   );
-}
+};
 
 export default Card;

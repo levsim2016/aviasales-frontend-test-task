@@ -1,10 +1,10 @@
-import React, { useCallback, MouseEvent } from "react";
-import styles from "./checkbox.module.scss";
-import CheckboxMarker from "../checkbox-marker/CheckboxMarker";
-import ICheckboxProps from "ui-elements/interfaces/ICheckboxProps";
+import React, {useCallback, MouseEvent} from 'react';
+import styles from './checkbox.module.scss';
+import CheckboxMarker from '../checkbox-marker/CheckboxMarker';
+import ICheckboxProps from 'ui-elements/interfaces/ICheckboxProps';
 
 const Checkbox: React.FC<ICheckboxProps> = (props: ICheckboxProps) => {
-  const { label, selected, selectHandler } = props;
+  const {label, selected, selectHandler} = props;
 
   const clickHandler = useCallback(
     (event: MouseEvent) => {

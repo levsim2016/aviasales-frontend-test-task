@@ -17,7 +17,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "node_modules/.bin/eslint --ext .ts,.tsx src/"
+    "lint:show": "node_modules/.bin/eslint --ext .ts,.tsx src/",
+    "lint:fix": "node_modules/.bin/eslint --ext .ts,.tsx src/ --fix"
   },
   "browserslist": {
     "production": [
@@ -38,7 +39,7 @@
   },
   "lint-staged": {
     "*.+(js|jsx|ts|tsx)": [
-      "npm run lint --max-warnings=0",
+      "npm run lint:show --max-warnings=0",
       "npm run build",
       "git add"
     ],
