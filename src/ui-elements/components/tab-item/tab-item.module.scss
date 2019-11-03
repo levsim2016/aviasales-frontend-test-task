@@ -1,0 +1,46 @@
+@import '../../../styles/theme.scss';
+
+$tab-border: 0.1rem solid #dfe5ec;
+
+.tab-item {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  box-sizing: border-box;
+
+  color: $text-color-primary;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+
+  border: $tab-border;
+  border-right: none;
+  padding: 1.5rem;
+  cursor: pointer;
+
+  &.selected {
+    border: 0.1rem solid $color-primary;
+    background-color: $color-primary;
+    color: #ffffff;
+  }
+
+  &.disabled {
+    color: #8b8b8b;
+    cursor: not-allowed;
+  }
+}
+
+.tab-item:first-of-type {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.tab-item:last-of-type {
+  border-right: $tab-border;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
