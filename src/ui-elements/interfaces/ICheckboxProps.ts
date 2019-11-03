@@ -1,7 +1,8 @@
-import CheckHandler from "ui-elements/types/CheckHandler";
+import SelectHandler from "ui-elements/types/SelectHandler";
+import IDisableable from "./IDisableable";
+import ISelectable from "./ISelectable";
 
-export default interface ICheckboxProps {
-  checked: boolean;
+export default interface ICheckboxProps extends IDisableable, ISelectable {
   label: string;
-  checkHandler: CheckHandler;
+  selectHandler: SelectHandler;
 }

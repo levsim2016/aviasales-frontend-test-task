@@ -1,3 +1,3 @@
-export default interface ICheckboxMarkerProps {
-  checked: boolean;
-}
+import ISelectable from "./ISelectable";
+
+export default interface ICheckboxMarkerProps extends ISelectable {}

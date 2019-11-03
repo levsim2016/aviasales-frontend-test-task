@@ -19,7 +19,7 @@
   box-sizing: border-box;
   margin-right: 1rem;
 
-  &.checked {
+  &.selected {
     border: 0.1rem solid $color-primary;
 
     .checkbox-marker-image{
