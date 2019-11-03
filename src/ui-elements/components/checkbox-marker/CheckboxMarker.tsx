@@ -1,20 +1,22 @@
-import React from 'react';
-import styles from './checkbox-marker.module.scss';
-import ICheckboxMarkerProps from 'ui-elements/interfaces/ICheckboxMarkerProps';
+import React from "react";
+import styles from "./checkbox-marker.module.scss";
+import ICheckboxMarkerProps from "ui-elements/interfaces/ICheckboxMarkerProps";
 
-function getCheckboxMarkerClasses(isSelected: boolean): string {
+function getCheckboxMarkerClasses(isSelected: boolean | undefined): string {
   if (isSelected === true) {
-    return `${styles['check-marker']} ${styles.selected}`;
+    return `${styles["check-marker"]} ${styles.selected}`;
   }
-  return styles['check-marker'];
+  return styles["check-marker"];
 }
 
-const CheckboxMarker: React.FC<ICheckboxMarkerProps> = (props: ICheckboxMarkerProps) => {
+const CheckboxMarker: React.FC<ICheckboxMarkerProps> = (
+  props: ICheckboxMarkerProps
+) => {
   const markerClasses = getCheckboxMarkerClasses(props.selected);
   return (
     <div className={markerClasses}>
       <svg
-        className={styles['checkbox-marker-image']}
+        className={styles["checkbox-marker-image"]}
         viewBox="0 0 12 8"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -23,6 +25,6 @@ const CheckboxMarker: React.FC<ICheckboxMarkerProps> = (props: ICheckboxMarkerPr
       </svg>
     </div>
   );
-}
+};
 
 export default CheckboxMarker;
