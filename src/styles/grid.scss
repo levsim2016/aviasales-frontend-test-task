@@ -6,3 +6,39 @@ $gutter: 2rem;
   margin-left: auto;
   margin-right: auto;
 }
+
+@mixin for-desktop-up {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-only {
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin for-tablets-up {
+  @media (min-width: 481px) {
+    @content;
+  }
+}
+
+@mixin for-tablets-only {
+  @media (min-width: 481px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin for-phone-up {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin for-phone-only {
+  @media (min-width: 320px) and (max-width: 480px) {
+    @content;
+  }
+}
