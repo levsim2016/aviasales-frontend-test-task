@@ -1,7 +1,6 @@
-import { ReactNode, CSSProperties } from 'react';
+import { ReactNode } from "react";
+import IStylizedProps from "./IStylizedProps";
 
-export default interface ICardProps {
-  className?: string;
-  style?: CSSProperties;
+export default interface ICardProps extends IStylizedProps {
   children?: ReactNode;
-};
+}
