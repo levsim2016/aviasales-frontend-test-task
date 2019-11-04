@@ -91,6 +91,7 @@
   "lint-staged": {
     "*.+(js|jsx|ts|tsx)": [
       "npm run lint:show --max-warnings=0",
+      "prettier --write",
       "npm run build",
       "git add"
     ],
