@@ -15,6 +15,8 @@ const AppLayout: React.FC = () => {
       <Header></Header>
 
       <Ticket></Ticket>
+      <Ticket></Ticket>
+      <Ticket></Ticket>
 
       <Checkbox
         label='Hmm...'

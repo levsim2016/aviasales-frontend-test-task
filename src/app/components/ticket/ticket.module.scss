@@ -1,5 +1,5 @@
-@import '../../../styles/grid.scss';
-@import '../../../styles/theme.scss';
+@import './src/styles/grid.scss';
+@import './src/styles/theme.scss';
 
 .ticket-card {
   padding: $gutter;
@@ -24,4 +24,19 @@
 .carrier-logo-wrapper {
   display: flex;
   width: (100% / 3);
+
+  @include for-phone-only {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.routes {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin-top: 2rem;
 }
