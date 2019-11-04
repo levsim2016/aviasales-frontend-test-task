@@ -6,9 +6,9 @@ const TabSwitcher: React.FC<ITabSwitcherProps> = (props: ITabSwitcherProps) => {
   const { children: tabs } = props;
 
   if (tabs === undefined) {
-    return <div className={styles['tab-switcher']}></div>;
+    return <div className={styles.tabSwitcher}></div>;
   }
-  return <div className={styles['tab-switcher']}>{tabs}</div>;
+  return <div className={styles.tabSwitcher}>{tabs}</div>;
 };
 
 export default TabSwitcher;

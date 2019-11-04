@@ -4,9 +4,9 @@ import ICardProps from 'ui-elements/interfaces/ICardProps';
 
 function getCardClasses(extraClassName?: string): string {
   if (extraClassName === undefined) {
-    return styles['card'];
+    return styles.card;
   }
-  return `${styles['card']} ${extraClassName}`;
+  return `${styles.card} ${extraClassName}`;
 }
 
 const Card: React.FC<ICardProps> = (props: ICardProps) => {
