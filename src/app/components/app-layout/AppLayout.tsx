@@ -10,7 +10,7 @@ const AppLayout: React.FC = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <div className={styles['app-layout']}>
+    <div className={styles.appLayout}>
       <Header></Header>
       <Checkbox
         label='Hmm...'
@@ -18,7 +18,7 @@ const AppLayout: React.FC = () => {
         selected={selected}
         selectHandler={isSelected => setSelected(isSelected)}
       ></Checkbox>
-      <Card className={styles['panel']}>Hello!</Card>
+      <Card className={styles.panel}>Hello!</Card>
       <TabSwitcher>
         <TabItem
           id='ggg'

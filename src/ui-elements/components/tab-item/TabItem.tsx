@@ -4,10 +4,10 @@ import ITabItemProps from 'ui-elements/interfaces/ITabItemProps';
 
 function getTabClasses(tabProps: ITabItemProps): string {
   if (tabProps.selected === true) {
-    return `${styles['tab-item']} ${styles.selected}`;
+    return `${styles.tabItem} ${styles.selected}`;
   }
 
-  return styles['tab-item'];
+  return styles.tabItem;
 }
 
 const TabItem: React.FC<ITabItemProps> = (props: ITabItemProps) => {
