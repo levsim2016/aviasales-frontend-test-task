@@ -1,0 +1,26 @@
+@import '../../../styles/grid.scss';
+@import '../../../styles/theme.scss';
+
+.ticket-card {
+  padding: $gutter;
+  box-sizing: content-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-label {
+  width: (100% / 3);
+  margin: 0;
+  color: $color-primary;
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+}
+
+.carrier-logo-wrapper {
+  width: (100% / 3);
+}

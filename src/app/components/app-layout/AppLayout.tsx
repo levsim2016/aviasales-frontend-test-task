@@ -5,6 +5,7 @@ import Checkbox from 'ui-elements/components/checkbox/Checkbox';
 import Card from 'ui-elements/components/card/Card';
 import TabSwitcher from 'ui-elements/components/tab-switcher/TabSwitcher';
 import TabItem from 'ui-elements/components/tab-item/TabItem';
+import Ticket from '../ticket/Ticket';
 
 const AppLayout: React.FC = () => {
   const [selected, setSelected] = useState(false);
@@ -12,6 +13,9 @@ const AppLayout: React.FC = () => {
   return (
     <div className={styles.appLayout}>
       <Header></Header>
+
+      <Ticket></Ticket>
+
       <Checkbox
         label='Hmm...'
         disabled={false}
