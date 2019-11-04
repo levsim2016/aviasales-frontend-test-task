@@ -6,7 +6,7 @@ import RouteDetailsItem from '../route-details-item/RouteDetailsItem';
 const RouteDetails: React.FC<IRouteDetailsProps> = (
   props: IRouteDetailsProps
 ) => {
-  const { origin, destination, date, stops, duration } = props;
+  const { origin, destination, stops } = props;
 
   return (
     <li className={styles.flightOptions}>
