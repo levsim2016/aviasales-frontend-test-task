@@ -1,0 +1,5 @@
+#ignore create-react-app config files
+config/*
+scripts/*
+build/*
+public/*
