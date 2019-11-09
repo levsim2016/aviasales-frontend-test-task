@@ -1,0 +1,42 @@
+@import './src/styles/grid.scss';
+@import './src/styles/theme.scss';
+
+.ticket-card {
+  padding: $gutter;
+  box-sizing: content-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-label {
+  width: (100% / 3);
+  margin: 0;
+  color: $color-primary;
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+}
+
+.carrier-logo-wrapper {
+  display: flex;
+  width: (100% / 3);
+
+  @include for-phone-only {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.routes {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin-top: 2rem;
+}

@@ -1,0 +1,28 @@
+@import './src/styles/grid.scss';
+@import './src/styles/theme.scss';
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  flex-basis: (100% / 3);
+
+  @include for-phone-only {
+    flex-basis: auto;
+  }
+}
+
+.label {
+  color: $text-color-secondary;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.8rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+
+.detail-value {
+  color: $text-color-primary;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+}
