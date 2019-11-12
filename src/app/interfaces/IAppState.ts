@@ -1,3 +1,5 @@
+import { ITicket } from './ITicket';
+
 export interface IAppState {
-  tickets: object[];
+  tickets: ITicket[];
 }
