@@ -1,3 +1,5 @@
+@import './styles/theme.scss';
+
 @font-face {
   font-family: 'Open Sans';
   src: local('OpenSans-Regular'),
@@ -26,6 +28,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1rem;
+  background-color: $app-background-color;
 }
 
 #root {

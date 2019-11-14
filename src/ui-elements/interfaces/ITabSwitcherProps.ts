@@ -1,5 +1,5 @@
-import TabItemElements from 'ui-elements/types/TabItemElement';
+import { TabItemElements } from 'ui-elements/types/TabItemElement';
 
-export default interface ITabSwitcherProps {
+export interface ITabSwitcherProps {
   children?: TabItemElements;
 }

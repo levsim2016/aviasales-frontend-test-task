@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './route-details-item.module.scss';
-import IRouteDetailsItemProps from 'app/interfaces/IRouteDetailsItemProps';
+import { IRouteDetailsItemProps } from 'app/interfaces/IRouteDetailsItemProps';
 
-const RouteDetailsItem: React.FC<IRouteDetailsItemProps> = (
+export const RouteDetailsItem: React.FC<IRouteDetailsItemProps> = (
   props: IRouteDetailsItemProps
 ) => {
   const { label, value } = props;
@@ -14,5 +14,3 @@ const RouteDetailsItem: React.FC<IRouteDetailsItemProps> = (
     </div>
   );
 };
-
-export default RouteDetailsItem;

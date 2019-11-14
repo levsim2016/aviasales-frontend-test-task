@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import styles from './app-layout.module.scss';
-import Header from '../header/Header';
-import Checkbox from 'ui-elements/components/checkbox/Checkbox';
-import Card from 'ui-elements/components/card/Card';
-import TabSwitcher from 'ui-elements/components/tab-switcher/TabSwitcher';
-import TabItem from 'ui-elements/components/tab-item/TabItem';
-import TransfersFilterPanel from '../transfers-filter-panel/TransfersFilterPanel';
+import { Header } from '../header/Header';
+import { Checkbox } from 'ui-elements/components/checkbox/Checkbox';
+import { Card } from 'ui-elements/components/card/Card';
+import { TabSwitcher } from 'ui-elements/components/tab-switcher/TabSwitcher';
+import { TabItem } from 'ui-elements/components/tab-item/TabItem';
+import { TransfersFilterPanel } from '../transfers-filter-panel/TransfersFilterPanel';
 import { TicketsListContainer } from 'app/containers/tickets-list-container/TicketsListContainer';
 
-const AppLayout: React.FC = () => {
+export const AppLayout: React.FC = () => {
   const [selected, setSelected] = useState(false);
 
   return (
@@ -41,5 +41,3 @@ const AppLayout: React.FC = () => {
     </div>
   );
 };
-
-export default AppLayout;

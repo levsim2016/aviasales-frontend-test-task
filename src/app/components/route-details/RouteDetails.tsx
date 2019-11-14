@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './route-details.module.scss';
 import { IRouteDetailsProps } from 'app/interfaces/IRouteDetailsProps';
-import RouteDetailsItem from '../route-details-item/RouteDetailsItem';
+import { RouteDetailsItem } from '../route-details-item/RouteDetailsItem';
 
 function getFormattedRouteDuration(duration: number): string {
   const date = new Date(0);
@@ -86,7 +86,7 @@ function getCommaSeparatedStops(stops: string[]): string {
   return stops.join(', ');
 }
 
-const RouteDetails: React.FC<IRouteDetailsProps> = (
+export const RouteDetails: React.FC<IRouteDetailsProps> = (
   props: IRouteDetailsProps
 ) => {
   const { origin, destination, date, duration, stops } = props;
@@ -112,5 +112,3 @@ const RouteDetails: React.FC<IRouteDetailsProps> = (
     </li>
   );
 };
-
-export default RouteDetails;

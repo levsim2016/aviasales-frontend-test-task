@@ -1,4 +1,4 @@
-export default interface IRouteDetailsItemProps {
+export interface IRouteDetailsItemProps {
   label: string;
   value: string;
 }

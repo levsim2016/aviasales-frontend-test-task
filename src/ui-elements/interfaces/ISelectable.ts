@@ -1,3 +1,3 @@
-export default interface ISelectable {
+export interface ISelectable {
   selected?: boolean;
 }

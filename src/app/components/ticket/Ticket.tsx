@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './ticket.module.scss';
 
-import Card from 'ui-elements/components/card/Card';
-import RouteDetails from '../route-details/RouteDetails';
+import { Card } from 'ui-elements/components/card/Card';
+import { RouteDetails } from '../route-details/RouteDetails';
 import { ITicketProps } from 'app/interfaces/ITicketProps';
 import { CARRIERS_LOGO_CDN_URL } from 'app/constants/carrierLogoCdnUrl';
 import { getLocalizedPrice } from 'shared/getLocalizedPrice';

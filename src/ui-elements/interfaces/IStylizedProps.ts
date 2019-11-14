@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
 
-export default interface IStylizedProps {
+export interface IStylizedProps {
   className?: string;
   style?: CSSProperties;
 }
