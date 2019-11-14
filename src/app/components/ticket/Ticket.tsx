@@ -19,6 +19,9 @@ export const Ticket: React.FC<ITicketProps> = (props: ITicketProps) => {
   const carrierLogoUrl = getCarrierLogoUrl(carrier);
   const localizedPrice = getLocalizedPrice(price);
 
+  const { origin, destination } = segments[0];
+  const [routeTo, routeFrom] = segments;
+
   return (
     <Card className={ticketClassesString}>
       <div className={header}>
@@ -28,16 +31,20 @@ export const Ticket: React.FC<ITicketProps> = (props: ITicketProps) => {
         </div>
       </div>
       <ul className={styles.routes}>
-        {segments.map((routeSegment, i) => (
-          <RouteDetails
-            origin={routeSegment.origin}
-            destination={routeSegment.destination}
-            date={routeSegment.date}
-            duration={routeSegment.duration}
-            stops={routeSegment.stops}
-            key={i}
-          ></RouteDetails>
-        ))}
+        <RouteDetails
+          origin={origin}
+          destination={destination}
+          date={routeTo.date}
+          duration={routeTo.duration}
+          stops={routeTo.stops}
+        ></RouteDetails>
+        <RouteDetails
+          origin={destination}
+          destination={origin}
+          date={routeFrom.date}
+          duration={routeFrom.duration}
+          stops={routeFrom.stops}
+        ></RouteDetails>
       </ul>
     </Card>
   );
