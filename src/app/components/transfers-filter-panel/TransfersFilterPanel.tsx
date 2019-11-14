@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './transfers-filter-panel.module.scss';
-import Card from 'ui-elements/components/card/Card';
-import Checkbox from 'ui-elements/components/checkbox/Checkbox';
+import { Card } from 'ui-elements/components/card/Card';
+import { Checkbox } from 'ui-elements/components/checkbox/Checkbox';
 
-const TransfersFilterPanel: React.FC = () => {
+export const TransfersFilterPanel: React.FC = () => {
   return (
     <Card className={styles.panelLayout}>
       <h4 className={styles.title}>Количество пересадок</h4>
@@ -37,5 +37,3 @@ const TransfersFilterPanel: React.FC = () => {
     </Card>
   );
 };
-
-export default TransfersFilterPanel;

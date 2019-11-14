@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './card.module.scss';
-import ICardProps from 'ui-elements/interfaces/ICardProps';
+import { ICardProps } from 'ui-elements/interfaces/ICardProps';
 
 function getCardClasses(extraClassName?: string): string {
   if (extraClassName === undefined) {
@@ -9,7 +9,7 @@ function getCardClasses(extraClassName?: string): string {
   return `${styles.card} ${extraClassName}`;
 }
 
-const Card: React.FC<ICardProps> = (props: ICardProps) => {
+export const Card: React.FC<ICardProps> = (props: ICardProps) => {
   const cardClasses = getCardClasses(props.className);
 
   return (
@@ -18,5 +18,3 @@ const Card: React.FC<ICardProps> = (props: ICardProps) => {
     </div>
   );
 };
-
-export default Card;

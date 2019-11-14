@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './route-details.module.scss';
-import IRouteDetailsProps from 'app/interfaces/IRouteDetailsProps';
-import RouteDetailsItem from '../route-details-item/RouteDetailsItem';
+import { IRouteDetailsProps } from 'app/interfaces/IRouteDetailsProps';
+import { RouteDetailsItem } from '../route-details-item/RouteDetailsItem';
 
-const RouteDetails: React.FC<IRouteDetailsProps> = (
+export const RouteDetails: React.FC<IRouteDetailsProps> = (
   props: IRouteDetailsProps
 ) => {
   const { origin, destination, stops } = props;
@@ -22,5 +22,3 @@ const RouteDetails: React.FC<IRouteDetailsProps> = (
     </li>
   );
 };
-
-export default RouteDetails;

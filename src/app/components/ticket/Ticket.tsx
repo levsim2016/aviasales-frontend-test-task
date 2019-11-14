@@ -1,10 +1,10 @@
 import React from 'react';
 import carrierLogo from 'assets/images/carrier-logo.png';
 import styles from './ticket.module.scss';
-import Card from 'ui-elements/components/card/Card';
-import RouteDetails from '../route-details/RouteDetails';
+import { Card } from 'ui-elements/components/card/Card';
+import { RouteDetails } from '../route-details/RouteDetails';
 
-const Ticket: React.FC = () => {
+export const Ticket: React.FC = () => {
   const { ticketCard, header, priceLabel, carrierLogoWrapper } = styles;
 
   return (
@@ -34,5 +34,3 @@ const Ticket: React.FC = () => {
     </Card>
   );
 };
-
-export default Ticket;

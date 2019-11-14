@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './header.module.scss';
-import Logo from '../logo/Logo';
+import { Logo } from '../logo/Logo';
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
   return (
     <header className={styles.headerLayout}>
       <div className={styles.logoWrapper}>
@@ -11,5 +11,3 @@ const Header: React.FC = () => {
     </header>
   );
 };
-
-export default Header;

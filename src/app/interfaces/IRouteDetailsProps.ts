@@ -1,4 +1,4 @@
-export default interface IRouteDetailsProps {
+export interface IRouteDetailsProps {
   origin: string;
   date: string;
   destination: string;
