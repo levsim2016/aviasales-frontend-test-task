@@ -1,10 +1,37 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { TicketsList } from 'app/components/tickets-list/TicketsList';
-import { getTickets } from 'app/selectors/getTickets';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { ThunkDispatch } from 'redux-thunk';
+import { IAppState } from 'app/interfaces/IAppState';
+import { AnyAction } from 'redux';
 
-export const TicketsListContainer: React.FC = () => {
-  const tickets = useSelector(getTickets);
+import { ISubscribedTicketsListProps } from 'app/interfaces/ISubscribedTicketsListProps';
+import { TicketsList } from 'app/components/tickets-list/TicketsList';
+import { fetchTickets } from 'app/effects/fetchTickets';
+
+const mapStateToProps = (store: IAppState) => {
+  return {
+    tickets: store.tickets,
+  };
+};
+
+const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AnyAction>) => {
+  return {
+    fetchTickets: () => dispatch(fetchTickets()),
+  };
+};
+
+const SubscribedTicketsList: React.FC<ISubscribedTicketsListProps> = ({
+  tickets,
+  fetchTickets,
+}) => {
+  useEffect(() => {
+    fetchTickets();
+  }, [fetchTickets]);
 
   return <TicketsList tickets={tickets}></TicketsList>;
 };
+
+export const TicketsListContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SubscribedTicketsList);
