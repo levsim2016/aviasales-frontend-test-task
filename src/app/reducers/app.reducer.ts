@@ -1,5 +1,7 @@
+import { AnyAction } from 'redux';
+
 import { IAppState } from 'app/interfaces/IAppState';
-import { Action } from 'redux';
+import { ISetTicketsAction, SET_TICKETS } from 'app/actions/SetTicketsAction';
 
 const initialState: IAppState = {
   tickets: [
@@ -46,11 +48,18 @@ const initialState: IAppState = {
   ],
 };
 
+type ActionsUnion = ISetTicketsAction;
+
 export function appReducer(
   state: IAppState = initialState,
-  action: Action
-): IAppState {
+  action: ActionsUnion | AnyAction
+) {
   switch (action.type) {
+    case SET_TICKETS:
+      return {
+        ...state,
+        tickets: action.tickets,
+      };
     default:
       return state;
   }
