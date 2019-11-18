@@ -28,6 +28,7 @@ export function appReducer(
     case SET_SEARCH_ID:
       return {
         ...state,
+        searchId: action.searchId,
       };
 
     default:
