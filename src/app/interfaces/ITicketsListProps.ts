@@ -1,5 +1,5 @@
 import { ITicket } from './ITicket';
 
-export interface IAppState {
+export interface ITicketsListProps {
   tickets: ITicket[];
 }

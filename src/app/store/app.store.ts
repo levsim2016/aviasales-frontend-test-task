@@ -1,9 +1,13 @@
-import { createStore, Action, Store } from 'redux';
+import { createStore, Store, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { appReducer } from 'app/reducers/app.reducer';
 import { IAppState } from 'app/interfaces/IAppState';
+import thunk from 'redux-thunk';
 
-export function configureAppStore(): Store<IAppState, Action> {
-  return createStore(appReducer, composeWithDevTools());
+const middlewareEnhancer = applyMiddleware(thunk);
+const storeWithReduxDevTools = composeWithDevTools(middlewareEnhancer);
+
+export function configureAppStore(): Store<IAppState> {
+  return createStore(appReducer, undefined, storeWithReduxDevTools);
 }
