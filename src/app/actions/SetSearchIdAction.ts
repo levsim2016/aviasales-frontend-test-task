@@ -1,9 +1,8 @@
-import { AnyAction } from 'redux';
 import { ISearchIdResponse } from 'app/interfaces/ISearchIdResponse';
 
 export const SET_SEARCH_ID = 'SET_SEARCH_ID';
 
-export interface ISetSearchIdAction extends AnyAction {
+export interface ISetSearchIdAction {
   type: typeof SET_SEARCH_ID;
   searchId: ISearchIdResponse['searchId'];
 }

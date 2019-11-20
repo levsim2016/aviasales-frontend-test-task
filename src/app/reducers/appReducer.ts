@@ -1,11 +1,8 @@
 import { AnyAction } from 'redux';
 
 import { IAppState } from 'app/interfaces/IAppState';
-import { ISetTicketsAction, SET_TICKETS } from 'app/actions/SetTicketsAction';
-import {
-  ISetSearchIdAction,
-  SET_SEARCH_ID,
-} from 'app/actions/SetSearchIdAction';
+import { ISetTicketsAction } from 'app/actions/SetTicketsAction';
+import { ISetSearchIdAction } from 'app/actions/SetSearchIdAction';
 
 const initialState: IAppState = {
   tickets: [],
@@ -18,17 +15,19 @@ export function appReducer(
   state: IAppState = initialState,
   action: ActionsUnion | AnyAction
 ) {
-  switch (action.type) {
-    case SET_TICKETS:
+  const appAction = action as ActionsUnion;
+
+  switch (appAction.type) {
+    case 'SET_TICKETS':
       return {
         ...state,
-        tickets: action.tickets,
+        tickets: appAction.tickets,
       };
 
-    case SET_SEARCH_ID:
+    case 'SET_SEARCH_ID':
       return {
         ...state,
-        searchId: action.searchId,
+        searchId: appAction.searchId,
       };
 
     default:
