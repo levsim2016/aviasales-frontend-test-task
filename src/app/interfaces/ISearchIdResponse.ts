@@ -1,3 +1,3 @@
 export interface ISearchIdResponse {
-  searchId: string;
+    searchId: string;
 }

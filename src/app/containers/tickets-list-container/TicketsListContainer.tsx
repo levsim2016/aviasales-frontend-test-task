@@ -11,33 +11,33 @@ import { fetchTickets } from 'app/effects/fetchTickets';
 import { fetchSearchId } from 'app/effects/fetchSearchId';
 
 const mapStateToProps = (store: IAppState) => {
-  return {
-    tickets: store.tickets,
-    searchId: store.searchId,
-  };
+    return {
+        tickets: store.tickets,
+        searchId: store.searchId,
+    };
 };
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AnyAction>) => {
-  return {
-    fetchTickets: () => dispatch(fetchTickets()),
-    fetchSearchId: () => dispatch(fetchSearchId()),
-  };
+    return {
+        fetchTickets: () => dispatch(fetchTickets()),
+        fetchSearchId: () => dispatch(fetchSearchId()),
+    };
 };
 
 const SubscribedTicketsList: React.FC<ISubscribedTicketsListProps> = ({
-  tickets,
-  fetchTickets,
-  fetchSearchId,
+    tickets,
+    fetchTickets,
+    fetchSearchId,
 }) => {
-  useEffect(() => {
-    fetchTickets();
-    fetchSearchId();
-  }, [fetchTickets, fetchSearchId]);
+    useEffect(() => {
+        fetchTickets();
+        fetchSearchId();
+    }, [fetchTickets, fetchSearchId]);
 
-  return <TicketsList tickets={tickets}></TicketsList>;
+    return <TicketsList tickets={tickets}></TicketsList>;
 };
 
 export const TicketsListContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(SubscribedTicketsList);

@@ -1,3 +1,3 @@
 export interface ISelectable {
-  selected?: boolean;
+    selected?: boolean;
 }

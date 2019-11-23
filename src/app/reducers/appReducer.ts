@@ -5,32 +5,32 @@ import { ISetTicketsAction } from 'app/actions/SetTicketsAction';
 import { ISetSearchIdAction } from 'app/actions/SetSearchIdAction';
 
 const initialState: IAppState = {
-  tickets: [],
-  searchId: '',
+    tickets: [],
+    searchId: '',
 };
 
 type ActionsUnion = ISetTicketsAction | ISetSearchIdAction;
 
 export function appReducer(
-  state: IAppState = initialState,
-  action: ActionsUnion | AnyAction
+    state: IAppState = initialState,
+    action: ActionsUnion | AnyAction
 ) {
-  const appAction = action as ActionsUnion;
+    const appAction = action as ActionsUnion;
 
-  switch (appAction.type) {
-    case 'SET_TICKETS':
-      return {
-        ...state,
-        tickets: appAction.tickets,
-      };
+    switch (appAction.type) {
+        case 'SET_TICKETS':
+            return {
+                ...state,
+                tickets: appAction.tickets,
+            };
 
-    case 'SET_SEARCH_ID':
-      return {
-        ...state,
-        searchId: appAction.searchId,
-      };
+        case 'SET_SEARCH_ID':
+            return {
+                ...state,
+                searchId: appAction.searchId,
+            };
 
-    default:
-      return state;
-  }
+        default:
+            return state;
+    }
 }

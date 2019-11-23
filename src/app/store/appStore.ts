@@ -9,5 +9,5 @@ const middlewareEnhancer = applyMiddleware(thunk);
 const storeWithReduxDevTools = composeWithDevTools(middlewareEnhancer);
 
 export function configureAppStore(): Store<IAppState> {
-  return createStore(appReducer, undefined, storeWithReduxDevTools);
+    return createStore(appReducer, undefined, storeWithReduxDevTools);
 }

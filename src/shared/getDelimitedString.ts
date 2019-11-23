@@ -1,6 +1,6 @@
 export function getDelimitedText(
-  textParts: string[],
-  delimiter: string = ', '
+    textParts: string[],
+    delimiter: string = ', '
 ): string {
-  return textParts.join(delimiter);
+    return textParts.join(delimiter);
 }

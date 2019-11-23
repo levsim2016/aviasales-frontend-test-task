@@ -4,19 +4,19 @@ import { CheckboxMarker } from '../checkbox-marker/CheckboxMarker';
 import { ICheckboxProps } from 'ui-elements/interfaces/ICheckboxProps';
 
 export const Checkbox: React.FC<ICheckboxProps> = (props: ICheckboxProps) => {
-  const { label, selected, selectHandler } = props;
+    const { label, selected, selectHandler } = props;
 
-  const clickHandler = useCallback(
-    (event: MouseEvent) => {
-      selectHandler(!selected);
-    },
-    [selected, selectHandler]
-  );
+    const clickHandler = useCallback(
+        (event: MouseEvent) => {
+            selectHandler(!selected);
+        },
+        [selected, selectHandler]
+    );
 
-  return (
-    <div className={styles.layout} onClick={clickHandler}>
-      <CheckboxMarker selected={selected}></CheckboxMarker>
-      <span>{label}</span>
-    </div>
-  );
+    return (
+        <div className={styles.layout} onClick={clickHandler}>
+            <CheckboxMarker selected={selected}></CheckboxMarker>
+            <span>{label}</span>
+        </div>
+    );
 };
