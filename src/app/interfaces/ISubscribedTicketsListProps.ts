@@ -6,5 +6,5 @@ import { ISetSearchIdAction } from 'app/actions/SetSearchIdAction';
 export interface ISubscribedTicketsListProps {
     tickets: ITicket[];
     fetchTickets: () => Promise<ISetTicketsAction>;
-    fetchSearchId: () => Promise<ISetSearchIdAction>;
+    getSearchId: () => Promise<ISetSearchIdAction>;
 }

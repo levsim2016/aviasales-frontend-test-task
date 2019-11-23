@@ -7,8 +7,8 @@ import { AnyAction } from 'redux';
 import { ISubscribedTicketsListProps } from 'app/interfaces/ISubscribedTicketsListProps';
 import { TicketsList } from 'app/components/tickets-list/TicketsList';
 
-import { fetchTickets } from 'app/effects/fetchTickets';
-import { fetchSearchId } from 'app/effects/fetchSearchId';
+import { fetchTicketsEffect } from 'app/effects/fetchTicketsEffect';
+import { getSearchIdEffect } from 'app/effects/getSearchIdEffect';
 
 const mapStateToProps = (store: IAppState) => {
     return {
@@ -19,20 +19,19 @@ const mapStateToProps = (store: IAppState) => {
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AnyAction>) => {
     return {
-        fetchTickets: () => dispatch(fetchTickets()),
-        fetchSearchId: () => dispatch(fetchSearchId()),
+        fetchTickets: () => dispatch(fetchTicketsEffect()),
+        getSearchId: () => dispatch(getSearchIdEffect()),
     };
 };
 
-const SubscribedTicketsList: React.FC<ISubscribedTicketsListProps> = ({
-    tickets,
-    fetchTickets,
-    fetchSearchId,
-}) => {
+const SubscribedTicketsList: React.FC<ISubscribedTicketsListProps> = (
+    props: ISubscribedTicketsListProps
+) => {
+    const { tickets, getSearchId, fetchTickets } = props;
+
     useEffect(() => {
-        fetchTickets();
-        fetchSearchId();
-    }, [fetchTickets, fetchSearchId]);
+        getSearchId().then(() => fetchTickets());
+    }, [fetchTickets, getSearchId]);
 
     return <TicketsList tickets={tickets}></TicketsList>;
 };
