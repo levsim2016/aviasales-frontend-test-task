@@ -8,8 +8,8 @@ import { Provider } from 'react-redux';
 import { configureAppStore } from 'app/store/app.store';
 
 ReactDOM.render(
-  <Provider store={configureAppStore()}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
+    <Provider store={configureAppStore()}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
 );
