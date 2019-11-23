@@ -4,7 +4,7 @@ import styles from './ticket.module.scss';
 import { Card } from 'ui-elements/components/card/Card';
 import { RouteDetails } from '../route-details/RouteDetails';
 import { ITicketProps } from 'app/interfaces/ITicketProps';
-import { CARRIERS_LOGO_CDN_URL } from 'app/constants/carrierLogoCdnUrl';
+import { CARRIERS_LOGO_CDN_URL } from 'app/constants/carriersLogoCdnUrl';
 import { getLocalizedPrice } from 'shared/getLocalizedPrice';
 
 function getCarrierLogoUrl(carrierIataCode: string): string {

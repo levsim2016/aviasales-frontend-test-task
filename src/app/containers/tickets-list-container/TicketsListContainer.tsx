@@ -6,27 +6,32 @@ import { AnyAction } from 'redux';
 
 import { ISubscribedTicketsListProps } from 'app/interfaces/ISubscribedTicketsListProps';
 import { TicketsList } from 'app/components/tickets-list/TicketsList';
-import { fetchTickets } from 'app/effects/fetchTickets';
+
+import { fetchTicketsEffect } from 'app/effects/fetchTicketsEffect';
+import { getSearchIdEffect } from 'app/effects/getSearchIdEffect';
 
 const mapStateToProps = (store: IAppState) => {
     return {
         tickets: store.tickets,
+        searchId: store.searchId,
     };
 };
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AnyAction>) => {
     return {
-        fetchTickets: () => dispatch(fetchTickets()),
+        fetchTickets: () => dispatch(fetchTicketsEffect()),
+        getSearchId: () => dispatch(getSearchIdEffect()),
     };
 };
 
-const SubscribedTicketsList: React.FC<ISubscribedTicketsListProps> = ({
-    tickets,
-    fetchTickets,
-}) => {
+const SubscribedTicketsList: React.FC<ISubscribedTicketsListProps> = (
+    props: ISubscribedTicketsListProps
+) => {
+    const { tickets, getSearchId, fetchTickets } = props;
+
     useEffect(() => {
-        fetchTickets();
-    }, [fetchTickets]);
+        getSearchId().then(() => fetchTickets());
+    }, [fetchTickets, getSearchId]);
 
     return <TicketsList tickets={tickets}></TicketsList>;
 };
