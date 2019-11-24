@@ -10,7 +10,7 @@ import { getTicketsFromApi } from 'app/api/getTicketsFromApi';
 import { setTicketsLoadingStatusAction } from 'app/actions/SetTicketsLoadingStatusAction';
 import { prepareTicketsForStore } from 'app/common/prepareTicketsForStore';
 
-export const fetchTicketsEffect: ActionCreator<
+export const updateTicketsEffect: ActionCreator<
     ThunkAction<Promise<ISetTicketsAction>, IAppState, null, ISetTicketsAction>
 > = () => {
     return async (dispatch: Dispatch, getState) => {
@@ -20,12 +20,14 @@ export const fetchTicketsEffect: ActionCreator<
         const response = await getTicketsFromApi(searchId);
 
         if (response === null) {
-            return fetchTicketsEffect()(dispatch, getState, null);
+            return updateTicketsEffect()(dispatch, getState, null);
         }
 
         dispatch(setTicketsLoadingStatusAction(false));
 
+        const prevTickets = getState().tickets;
         const preparedTickets = prepareTicketsForStore(response.tickets);
-        return dispatch(setTicketsAction(preparedTickets));
+
+        return dispatch(setTicketsAction([...prevTickets, ...preparedTickets]));
     };
 };
