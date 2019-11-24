@@ -1,3 +1,5 @@
+import { IAppState } from './IAppState';
+
 export interface ISearchIdResponse {
-    searchId: string;
+    searchId: IAppState['searchId'];
 }
