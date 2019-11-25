@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './route-details-item.module.scss';
-import { IRouteDetailsItemProps } from 'app/interfaces/IRouteDetailsItemProps';
+import styles from './route-feature.module.scss';
+import { IRouteFeatureProps } from 'app/interfaces/IRouteFeatureProps';
 
-export const RouteDetailsItem: React.FC<IRouteDetailsItemProps> = (
-    props: IRouteDetailsItemProps
+export const RouteFeature: React.FC<IRouteFeatureProps> = (
+    props: IRouteFeatureProps
 ) => {
     const { label, value } = props;
 

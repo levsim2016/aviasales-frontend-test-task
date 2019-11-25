@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './route-details.module.scss';
 import { IRouteDetailsProps } from 'app/interfaces/IRouteDetailsProps';
-import { RouteDetailsItem } from '../route-details-item/RouteDetailsItem';
-import { getDelimitedText } from 'shared/getDelimitedString';
+import { RouteFeature } from '../route-feature/RouteFeature';
+import { getPluralAmount } from 'shared/getPluralizedAmount';
 
 function getFormattedRouteDuration(duration: number): string {
     const date = new Date(0);
@@ -38,32 +38,6 @@ function getFormattedRouteDuration(duration: number): string {
         .trim();
 }
 
-function getFormattedStopsLabel(stopsAmount: number): string {
-    let labelPostfix = '';
-    switch (stopsAmount) {
-        case 1:
-            labelPostfix = 'пересадка';
-            break;
-        case 2:
-            labelPostfix = 'пересадки';
-            break;
-        case 3:
-            labelPostfix = 'пересадки';
-            break;
-        case 4:
-            labelPostfix = 'пересадки';
-            break;
-        default:
-            labelPostfix = 'пересадок';
-    }
-
-    return `${stopsAmount} ${labelPostfix}`;
-}
-
-function getRouteTimeFrameLabel(origin: string, destination: string): string {
-    return origin + ' - ' + destination;
-}
-
 function getRouteTimeFrame(
     departureDate: Date,
     durationInMinutes: number
@@ -88,23 +62,32 @@ export const RouteDetails: React.FC<IRouteDetailsProps> = (
 ) => {
     const { origin, destination, date, duration, stops } = props;
 
+    const routeCities = [origin, destination].join(' - ');
+    const delimitedStops = stops.join(', ');
+
+    const stopsPluralForms = ['остановка', 'остановки', 'остановок'];
+    const stopsAmountLabel = `${stops.length} ${getPluralAmount(
+        stops.length,
+        stopsPluralForms
+    )}`;
+
     return (
         <li className={styles.flightOptions}>
-            <RouteDetailsItem
-                label={getRouteTimeFrameLabel(origin, destination)}
+            <RouteFeature
+                label={routeCities}
                 value={getRouteTimeFrame(date, duration)}
-            ></RouteDetailsItem>
+            ></RouteFeature>
 
-            <RouteDetailsItem
+            <RouteFeature
                 label='В пути'
                 value={getFormattedRouteDuration(duration)}
-            ></RouteDetailsItem>
+            ></RouteFeature>
 
             {stops.length > 0 && (
-                <RouteDetailsItem
-                    label={getFormattedStopsLabel(stops.length)}
-                    value={getDelimitedText(stops)}
-                ></RouteDetailsItem>
+                <RouteFeature
+                    label={stopsAmountLabel}
+                    value={delimitedStops}
+                ></RouteFeature>
             )}
         </li>
     );
