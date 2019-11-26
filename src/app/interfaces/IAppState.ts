@@ -1,9 +1,9 @@
 import { ITicket } from './ITicket';
-import { ITicketFilters } from './ITicketFilters';
+import { ITransfersFilters } from './ITransfersFilters';
 
 export interface IAppState {
     tickets: ITicket[];
     isTicketsLoading: boolean;
     searchId: string;
-    ticketFilters: ITicketFilters;
+    transfersFilters: ITransfersFilters;
 }

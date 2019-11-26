@@ -4,13 +4,13 @@ import { IAppState } from 'app/interfaces/IAppState';
 import { ISetTicketsAction } from 'app/actions/SetTicketsAction';
 import { ISetSearchIdAction } from 'app/actions/SetSearchIdAction';
 import { ISetTicketsLoadingStatusAction } from 'app/actions/SetTicketsLoadingStatusAction';
-import { ISetTicketFiltersAction } from 'app/actions/SetTicketFiltersAction';
+import { ISetTransfersFiltersAction } from 'app/actions/SetTransfersFiltersAction';
 
 const initialState: IAppState = {
     tickets: [],
     isTicketsLoading: false,
     searchId: '',
-    ticketFilters: {
+    transfersFilters: {
         filterByStops: true,
         filterByStopsAmount: {},
     },
@@ -20,7 +20,7 @@ type ActionsUnion =
     | ISetTicketsAction
     | ISetSearchIdAction
     | ISetTicketsLoadingStatusAction
-    | ISetTicketFiltersAction;
+    | ISetTransfersFiltersAction;
 
 export function appReducer(
     state: IAppState = initialState,
@@ -47,7 +47,7 @@ export function appReducer(
                 isTicketsLoading: appAction.status,
             };
 
-        case 'SET_TICKET_FILTERS_ACTION':
+        case 'SET_TRANSFERS_FILTERS_ACTION':
             return {
                 ...state,
                 ticketFilters: appAction.filters,
