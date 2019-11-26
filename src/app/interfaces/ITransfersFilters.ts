@@ -1,6 +1,6 @@
 export interface ITransfersFilters {
-    filterByStops: boolean;
-    filterByStopsAmount: {
-        [stopsAmount: number]: boolean;
+    filterByTransfers: boolean;
+    filterByTransfersAmount: {
+        [transfersAmount: number]: boolean;
     };
 }

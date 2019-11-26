@@ -11,8 +11,8 @@ const initialState: IAppState = {
     isTicketsLoading: false,
     searchId: '',
     transfersFilters: {
-        filterByStops: true,
-        filterByStopsAmount: {},
+        filterByTransfers: true,
+        filterByTransfersAmount: {},
     },
 };
 
